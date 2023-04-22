@@ -1,0 +1,394 @@
+[
+    {
+        "code": "COM SCI 111",
+        "division": "upper",
+        "description": "Lecture, four hours; laboratory, two hours; outside study, nine hours. Enforced requisites: courses 32, 33, 35L. Introduction to operating systems design and evaluation. Computer software systems performance, robustness, and functionality. Kernel structure, bootstrapping, input/output (I/O) devices and interrupts. Processes and threads; address spaces, memory management, and virtual memory. Scheduling, synchronization. File systems: layout, performance, robustness. Distributed systems: networking, remote procedure call (RPC), asynchronous RPC, distributed file systems, transactions. Protection and security. Exercises involving applications using, and internals of, real-world operating systems. Letter grading.",
+        "units": 5,
+        "profs": [
+            {
+                "name": "Peter Reiher",
+                "rating": 0
+            },
+            {
+                "name": "Peter Reiher",
+                "rating": 0
+            },
+            {
+                "name": "Peter Reiher",
+                "rating": 0
+            },
+            {
+                "name": "Peter Reiher",
+                "rating": 0
+            }
+        ]
+    },
+    {
+        "code": "COM SCI 118",
+        "division": "upper",
+        "description": "Lecture, four hours; discussion, two hours; outside study, six hours. Enforced requisite: course 111. Designed for juniors/seniors. Introduction to design and performance evaluation of computer networks, including such topics as what protocols are, layered network architecture, Internet protocol architecture, network applications, transport protocols, routing algorithms and protocols, internetworking, congestion control, and link layer protocols including Ethernet and wireless channels. Letter grading.",
+        "units": 4,
+        "profs": [
+            {
+                "name": "Giovanni Pau",
+                "rating": 2.6
+            },
+            {
+                "name": "Giovanni Pau",
+                "rating": 2.6
+            },
+            {
+                "name": "Giovanni Pau",
+                "rating": 2.6
+            },
+            {
+                "name": "Giovanni Pau",
+                "rating": 2.6
+            }
+        ]
+    },
+    {
+        "code": "COM SCI 131",
+        "division": "upper",
+        "description": "Lecture, four hours; laboratory, two hours; outside study, six hours. Enforced requisites: courses 33, 35L. Basic concepts in design and use of programming languages, including abstraction, modularity, control mechanisms, types, declarations, syntax, and semantics. Study of several different language paradigms, including functional, object-oriented, and logic programming. Letter grading.",
+        "units": 4,
+        "profs": [
+            {
+                "name": "Todd Millstein",
+                "rating": 3.7
+            },
+            {
+                "name": "Todd Millstein",
+                "rating": 3.7
+            }
+        ]
+    },
+    {
+        "code": "COM SCI 180",
+        "division": "upper",
+        "description": "Lecture, four hours; discussion, two hours; outside study, six hours. Enforced requisites: course 32, Mathematics 61. Designed for junior/senior Computer Science majors. Introduction to design and analysis of algorithms. Design techniques: divide-and-conquer, greedy method, dynamic programming; selection of prototypical algorithms; choice of data structures and representations; complexity measures: time, space, upper, lower bounds, asymptotic complexity; NP-completeness. Letter grading.",
+        "units": 4,
+        "profs": [
+            {
+                "name": "Rafail Ostrovsky",
+                "rating": 2.8
+            },
+            {
+                "name": "Rafail Ostrovsky",
+                "rating": 2.8
+            },
+            {
+                "name": "Rafail Ostrovsky",
+                "rating": 2.8
+            },
+            {
+                "name": "Rafail Ostrovsky",
+                "rating": 2.8
+            }
+        ]
+    },
+    {
+        "code": "COM SCI 181",
+        "division": "upper",
+        "description": "Lecture, four hours; discussion, two hours; outside study, six hours. Enforced requisite: course 180. Designed for junior/senior Computer Science majors. Grammars, automata, and languages. Finite-state languages and finite-state automata. Context-free languages and pushdown story automata. Unrestricted rewriting systems, recursively enumerable and recursive languages, and Turing machines. Closure properties, pumping lemmas, and decision algorithms. Introduction to computability. Letter grading.",
+        "units": 4,
+        "profs": [
+            {
+                "name": "Alexandr Sherstov",
+                "rating": 4.7
+            },
+            {
+                "name": "Alexandr Sherstov",
+                "rating": 4.7
+            },
+            {
+                "name": "Alexandr Sherstov",
+                "rating": 4.7
+            },
+            {
+                "name": "Alexandr Sherstov",
+                "rating": 4.7
+            }
+        ]
+    },
+    {
+        "code": "COM SCI M151B",
+        "division": "upper",
+        "description": "(Same as Electrical and Computer Engineering M116C.) Lecture, four hours; discussion, two hours; outside study, six hours. Enforced requisites: courses 33, and M51A or Electrical and Computer Engineering M16. Recommended: courses 111, and M152A or Electrical and Computer Engineering M116L. Computer system organization and design, implementation of CPU datapath and control, instruction set design, memory hierarchy (caches, main memory, virtual memory) organization and management, input/output subsystems (bus structures, interrupts, DMA), performance evaluation, pipelined processors. Letter grading.",
+        "units": 4,
+        "profs": [
+            {
+                "name": "David Rennels",
+                "rating": 2.3
+            },
+            {
+                "name": "David Rennels",
+                "rating": 2.3
+            },
+            {
+                "name": "David Rennels",
+                "rating": 2.3
+            },
+            {
+                "name": "David Rennels",
+                "rating": 2.3
+            }
+        ]
+    },
+    {
+        "code": "EC ENGR M116C",
+        "division": "upper",
+        "description": "(Same as Computer Science M151B.) Lecture, four hours; discussion, two hours; outside study, six hours. Enforced requisites: course M16 or Computer Science M51A, Computer Science 33. Recommended: course M116L or Computer Science M152A, Computer Science 111. Computer system organization and design, implementation of CPU datapath and control, instruction set design, memory hierarchy (caches, main memory, virtual memory) organization and management, input/output subsystems (bus structures, interrupts, DMA), performance evaluation, pipelined processors. Letter grading.",
+        "units": 4,
+        "profs": [
+            {
+                "name": "Yuval Tamir",
+                "rating": 0
+            },
+            {
+                "name": "Yuval Tamir",
+                "rating": 0
+            },
+            {
+                "name": "Yuval Tamir",
+                "rating": 0
+            },
+            {
+                "name": "Yuval Tamir",
+                "rating": 0
+            }
+        ]
+    },
+    {
+        "code": "COM SCI M152A",
+        "division": "upper",
+        "description": "(Same as Electrical and Computer Engineering M116L.) Laboratory, four hours; outside study, two hours. Enforced requisite: course M51A or Electrical and Computer Engineering M16. Hands-on design, implementation, and debugging of digital logic circuits, use of computer-aided design tools for schematic capture and simulation, implementation of complex circuits using programmed array logic, design projects. Letter grading.",
+        "units": 2,
+        "profs": [
+            {
+                "name": "Hongxiang Gu",
+                "rating": 0
+            },
+            {
+                "name": "Hongxiang Gu",
+                "rating": 0
+            },
+            {
+                "name": "Hongxiang Gu",
+                "rating": 0
+            },
+            {
+                "name": "Hongxiang Gu",
+                "rating": 0
+            }
+        ]
+    },
+    {
+        "code": "EC ENGR M116L",
+        "division": "upper",
+        "description": "(Same as Computer Science M152A.) Laboratory, four hours; outside study, two hours. Enforced requisite: course M16 or Computer Science M51A. Hands-on design, implementation, and debugging of digital logic circuits, use of computer-aided design tools for schematic capture and simulation, implementation of complex circuits using programmed array logic, design projects. Letter grading.",
+        "units": 2,
+        "profs": [
+            {
+                "name": "Kaiwen Zheng",
+                "rating": 0
+            },
+            {
+                "name": "Kaiwen Zheng",
+                "rating": 0
+            },
+            {
+                "name": "Kaiwen Zheng",
+                "rating": 0
+            },
+            {
+                "name": "Kaiwen Zheng",
+                "rating": 0
+            }
+        ]
+    },
+    {
+        "code": "C&EE 110",
+        "division": "upper",
+        "description": "Lecture, four hours; discussion, one hour (when scheduled); outside study, seven hours. Requisites: Mathematics 32A, 33A. Recommended: course M20. Introduction to fundamental concepts and applications of probability and statistics in civil engineering, with focus on how these concepts are used in experimental design and sampling, data analysis, risk and reliability analysis, and project design under uncertainty. Topics include basic probability concepts, random variables and analytical probability distributions, functions of random variables, estimating parameters from observational data, regression, hypothesis testing, and Bayesian concepts. Letter grading.",
+        "units": 4,
+        "profs": [
+            {
+                "name": "Mihyun Park",
+                "rating": 5.0
+            },
+            {
+                "name": "Mihyun Park",
+                "rating": 5.0
+            },
+            {
+                "name": "Mihyun Park",
+                "rating": 5.0
+            },
+            {
+                "name": "Mihyun Park",
+                "rating": 5.0
+            }
+        ]
+    },
+    {
+        "code": "EC ENGR 131A",
+        "division": "upper",
+        "description": "Lecture, four hours; discussion, one hour; outside study, 10 hours. Requisites: course 102 (enforced), Mathematics 32B, 33B. Introduction to basic concepts of probability, including random variables and vectors, distributions and densities, moments, characteristic functions, and limit theorems. Applications to communication, control, and signal processing. Introduction to computer simulation and generation of random events. Letter grading.",
+        "units": 4,
+        "profs": [
+            {
+                "name": "Richard Wesel",
+                "rating": 4.0
+            },
+            {
+                "name": "Richard Wesel",
+                "rating": 4.0
+            },
+            {
+                "name": "Richard Wesel",
+                "rating": 4.0
+            },
+            {
+                "name": "Richard Wesel",
+                "rating": 4.0
+            },
+            {
+                "name": "Lara Dolecek",
+                "rating": 3.0
+            },
+            {
+                "name": "Lara Dolecek",
+                "rating": 3.0
+            },
+            {
+                "name": "Lara Dolecek",
+                "rating": 3.0
+            },
+            {
+                "name": "Lara Dolecek",
+                "rating": 3.0
+            }
+        ]
+    },
+    {
+        "code": "MATH 170A",
+        "division": "upper",
+        "description": "Lecture, three hours; discussion, one hour. Requisites: courses 32B, 33A, 131A. Not open to students with credit for course 170E, Electrical and Computer Engineering 131A, or Statistics 100A. Rigorous presentation of probability theory based on real analysis. Probability space, probability and conditional probability, independence, Bayes\u2019 rule, discrete and continuous random variables and their distributions, expectation, moments and variance, conditional distribution and expectation, weak law of large numbers. P/NP or letter grading.",
+        "units": 4,
+        "profs": [
+            {
+                "name": "Edward Effros",
+                "rating": 2.4
+            },
+            {
+                "name": "Edward Effros",
+                "rating": 2.4
+            },
+            {
+                "name": "Edward Effros",
+                "rating": 2.4
+            },
+            {
+                "name": "Edward Effros",
+                "rating": 2.4
+            }
+        ]
+    },
+    {
+        "code": "MATH 170E",
+        "division": "upper",
+        "description": "Lecture, three hours; discussion, one hour. Requisites: courses 31A, 31B. Not open to students with credit for course 170A, Electrical and Computer Engineering 131A, or Statistics 100A. Introduction to probability theory with emphasis on topics relevant to applications. Topics include discrete (binomial, Poisson, etc.) and continuous (exponential, gamma, chi-square, normal) distributions, bivariate distributions, distributions of functions of random variables (including moment generating functions and central limit theorem). P/NP or letter grading.",
+        "units": 4,
+        "profs": [
+            {
+                "name": "Jamie Haddock",
+                "rating": 5.0
+            },
+            {
+                "name": "Jamie Haddock",
+                "rating": 5.0
+            },
+            {
+                "name": "Jamie Haddock",
+                "rating": 5.0
+            },
+            {
+                "name": "Jamie Haddock",
+                "rating": 5.0
+            }
+        ]
+    },
+    {
+        "code": "STATS 100A",
+        "division": "upper",
+        "description": "Lecture, three hours; discussion, one hour. Requisites: Mathematics 32B, 33A. Not open to students with credit for Electrical Engineering 131A or Mathematics 170A; open to graduate students. Students may receive credit for only two of following: course 100A, former course 110A, Biostatistics 100A. Probability distributions, random variables, vectors, and expectation. P/NP or letter grading.",
+        "units": 4,
+        "profs": [
+            {
+                "name": "V Ioudina",
+                "rating": 2.6
+            },
+            {
+                "name": "V Ioudina",
+                "rating": 2.6
+            },
+            {
+                "name": "V Ioudina",
+                "rating": 2.6
+            },
+            {
+                "name": "V Ioudina",
+                "rating": 2.6
+            }
+        ]
+    },
+    {
+        "code": "COM SCI 130",
+        "division": "upper",
+        "description": "Lecture, four hours; laboratory, two hours; outside study, six hours. Requisites: courses 111, 131. Recommended requisite: Engineering 183EW or 185EW. Structured programming, program specification, program proving, modularity, abstract data types, composite design, software tools, software control systems, program testing, team programming. Letter grading.",
+        "units": 4,
+        "profs": [
+            {
+                "name": "Miryung Kim",
+                "rating": 3.8
+            },
+            {
+                "name": "Miryung Kim",
+                "rating": 3.8
+            },
+            {
+                "name": "Miryung Kim",
+                "rating": 3.8
+            },
+            {
+                "name": "Miryung Kim",
+                "rating": 3.8
+            }
+        ]
+    },
+    {
+        "code": "COM SCI 152B",
+        "division": "upper",
+        "description": "Laboratory, four hours; discussion, two hours; outside study, six hours. Enforced requisite: course M151B or Electrical Engineering M116C. Recommended: Engineering 183EW or 185EW. Limited to seniors. Design and implementation of complex digital subsystems using field-programmable gate arrays (e.g., processors, special-purpose processors, device controllers, and input/output interfaces). Students work in teams to develop and implement designs and to document and give oral presentations of their work. Letter grading.",
+        "units": 4,
+        "profs": [
+            {
+                "name": "Ghazal Ershadi",
+                "rating": 3.5
+            },
+            {
+                "name": "Ghazal Ershadi",
+                "rating": 3.5
+            },
+            {
+                "name": "Ghazal Ershadi",
+                "rating": 3.5
+            },
+            {
+                "name": "Ghazal Ershadi",
+                "rating": 3.5
+            }
+        ]
+    }
+]
