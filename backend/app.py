@@ -1,7 +1,10 @@
 from flask import Flask, jsonify, request, render_template
-import requests
 import openai
 import json
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # app = Flask(__name__)
 app = Flask(__name__, static_folder='../frontend/build/static', template_folder='../frontend/build')
@@ -14,34 +17,7 @@ def index():
     return render_template('index.html')
 
 # Set up OpenAI API credentials
-openai.api_key = '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'
-
-@app.route('/process_form', methods=['POST'])
-def process_form():
-    # get the form data from the request
-    data = requests.form
-    
-    # extract the relevant data from the form
-    input_text = data['input_text']
-    
-    # call the OpenAI API
-    response = requests.post(
-        'https://api.openai.com/v1/engines/davinci-codex/completions',
-        headers={
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer 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',
-        },
-        json={
-            'prompt': input_text,
-            'max_tokens': 100,
-        }
-    )
-    
-    # extract the generated text from the API response
-    generated_text = response.json()['choices'][0]['text']
-    
-    # return the generated text as a response to the frontend
-    return generated_text
+openai.api_key = os.getenv('OPENAI_API_KEY')
 
 @app.route('/generate', methods=['POST', 'GET'])
 def generate_response():
@@ -119,7 +95,6 @@ def generate_response():
     app.logger.info(response_dict)
 
     # Return response as JSON
-    # app.logger.info(response.choices[0].text)
     return jsonify(response_dict)
 
 if __name__ == '__main__':

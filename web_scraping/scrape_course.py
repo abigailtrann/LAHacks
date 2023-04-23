@@ -1,5 +1,3 @@
-# NOW PRINT COURSES FOR CS
-import requests
 from bs4 import BeautifulSoup
 import re
 from selenium import webdriver
@@ -15,8 +13,6 @@ driver.get("https://catalog.registrar.ucla.edu/major/2022/ComputerScienceBS")
 wait = WebDriverWait(driver, 10)
 wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '.relationshipName')))
            
-# url = "https://catalog.registrar.ucla.edu/browse/College%20and%20Schools/HenrySamueliSchoolofEngineeringandAppliedScience"
-# response = requests.get(url)
 soup = BeautifulSoup(driver.page_source, 'html.parser')
 course_names = []
 
@@ -31,16 +27,13 @@ for div in course_main_heading_divs:
     print(heading)
 
     if heading == 'The Major':
-        course_anchors = div.find_all('a') #div.find_all('a', class_=re.compile(r'\bRelationshipsListItem\b'))
+        course_anchors = div.find_all('a')
         
         for course_anchor in course_anchors:
             course = {}
             # Open the link in a new tab
-            # print(course_anchor)
             url = course_anchor.get('href')
             driver.execute_script("window.open('" + url + "', '_blank')")
-            # open a new link
-            # course_anchor.send_keys(Keys.CONTROL + Keys.RETURN)
 
             # Wait for the new tab to load and switch to it
             driver.switch_to.window(driver.window_handles[-1])
@@ -87,25 +80,3 @@ print(courses)
 
 with open('./courses.json', 'w') as f:
     json.dump(courses, f)
-
-# course_anchors = soup.find_all('span', class_='relationshipName') #soup.find_all("div")# "div[class*=unit-title]")
-
-# my_divs = driver.execute_script("return document.querySelectorAll('.unit-title')")
-
-# for course in course_anchors:
-#     if 'class' in course.attrs:
-#         print(course.attrs['class'])
-#         if '.relationshipName' in course.attrs['class']:
-#             print("found", course)
-
-# for anchor in course_anchors:
-#     course_name = anchor.text.strip()
-#     if course_name is not None:
-#         course_names.append(course_name)
- 
-# # look for href with /course, click them, go the course page 
-# if course_names:
-#     for name in course_names:
-#         print(name)
-# else:
-#     print('Could not find the element that contains all the courses.')

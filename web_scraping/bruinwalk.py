@@ -4,12 +4,6 @@ from urllib.parse import urlencode
 
 base_url = 'https://www.bruinwalk.com/search/'
 
-
-print('encoded search url')
-
-# course_code = 'COM SCI 31'
-# url = 'https://www.bruinwalk.com/search/?q=COM+SCI+31'
-
 import json
 import time
 
@@ -18,7 +12,7 @@ with open('courses.json', 'r') as f:
     data = json.load(f)
 
 for course in data:
-    search_query = course['code'] # course.code
+    search_query = course['code']
     query_params = {'q': search_query}
 
     encoded_params = urlencode(query_params)
@@ -29,8 +23,6 @@ for course in data:
 
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
-
-    
 
     result_cards = soup.select('div.result-card')
 
@@ -48,7 +40,6 @@ for course in data:
             prof_divs = result_card.find_all('div', class_='prof-info')
 
             for prof_div in prof_divs:
-                # print("prof div", prof_div)
                 a___S = prof_div.find_all('a')
                 prof_div_a = prof_div.find('a', class_='name')
                 if prof_div_a:
