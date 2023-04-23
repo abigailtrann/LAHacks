@@ -11,11 +11,7 @@
 body {
   background-image: linear-gradient(to bottom right, rgb(0, 55, 255), yellow);; /* Replace with the color you want */
   color: white;
-  font-family: 'Sarabun', sans-serif;
-}
-
-input, select {
-  color: white;
+  font-weight: 100;
 }
 
 
