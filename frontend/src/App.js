@@ -37,6 +37,8 @@ function App() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(info),
     };
+
+    // replace this
     fetch("https://reqres.in/api/posts", request)
       .then((response) => response.json())
       .then((data) => console.log(data))
