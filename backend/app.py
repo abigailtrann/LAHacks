@@ -14,7 +14,7 @@ def index():
     return render_template('index.html')
 
 # Set up OpenAI API credentials
-openai.api_key = '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'
+openai.api_key = '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'
 
 @app.route('/process_form', methods=['POST'])
 def process_form():
@@ -43,23 +43,6 @@ def process_form():
     # return the generated text as a response to the frontend
     return generated_text
 
-# @app.route('/simple_request', methods=['GET'])
-# def generate_text():
-#     response = requests.post(
-#         'https://api.openai.com/v1/engines/davinci-codex/completions',
-#         headers={
-#             'Content-Type': 'application/json',
-#             'Authorization': 'Bearer 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',
-#         },
-#         json={
-#             'prompt': 'write me a poem',
-#             'max_tokens': 100,
-#         }
-#     )
-    
-#     generated_text = response.json()['choices'][0]['text']
-#     return generated_text
-
 @app.route('/generate', methods=['POST', 'GET'])
 def generate_response():
     # Get prompt from request data
@@ -86,18 +69,13 @@ def generate_response():
         app.logger.info(data)
         app.logger.info(data['quarters'])
         prompt = f"""
-            Give me a semester vise course schedule of what courses i should take per semester. Choose 1 professor for each course based on rating.
+            Give me a semester vise course schedule of what courses i should take per semester.
             I have total {data['quarters']} semesters and maximum {data['units']} units per semester
             give me the output in the following json format
-            {{
-                "quarter [semester_number]":[
-                    {{"name": [course_name], "prof", [prof_name], "units": [units]}}, ....
-                ]
-            }}
+            Answer: {{"quarter [semester_number]":[{{"name": [course_name], "prof", [prof_name], "units": [units]}}, ....]}}
+            Choose one professor per course in the above format based on data provided ahead.
             the following is the input json description for my courses. I want the schedule to be {data['difficulty']}
-            Also make sure to give an explaination after the json response as to why you chose the particular schedule
-            keep this information in mind while generating the
-            course scheule
+            Also make sure to give an explaination after the json response as to why you chose the particular schedule keep this information in mind while generating the course scheule
         """
     
     
@@ -110,9 +88,36 @@ def generate_response():
         max_tokens=700
     )
     
+    response_string = response.choices[0].text
+
+    app.logger.info(response_string)
+
+    if "Answer:" in response_string:
+        answer_string = response_string[response_string.index("Answer:") + len("Answer:"):]
+    else:
+        answer_string = response_string
+
+    original_string = answer_string
+    start_pos = original_string.find("{") + 1
+    end_pos = original_string.rfind("}")
+    extracted_data = "{"+original_string[start_pos:end_pos]+"}"
+
+    app.logger.info(extracted_data)
+
+    python_obj = json.loads(extracted_data)
+
+    explain_string = answer_string[answer_string.index("Explanation:") + len("Explanation:"):]
+
+    response_dict= {
+        'courses':python_obj,
+        'explaination': explain_string
+    }
+
+    app.logger.info(response_dict)
+
     # Return response as JSON
-    app.logger.info(response.choices[0].text)
-    return jsonify(response.choices[0].text)
+    # app.logger.info(response.choices[0].text)
+    return jsonify(response_dict)
 
 if __name__ == '__main__':
     app.run(debug=True)
