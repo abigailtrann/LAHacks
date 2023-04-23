@@ -1,0 +1,47 @@
+.loading-animation-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  
+  .dot {
+    background-color: #007bff;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    animation: dot-animation 1.5s ease-in-out infinite;
+  }
+  
+  .dot-1 {
+    animation-delay: 0s;
+  }
+  
+  .dot-2 {
+    animation-delay: 0.5s;
+  }
+  
+  .dot-3 {
+    animation-delay: 1s;
+  }
+  
+  .loading-text {
+    font-size: 1.2rem;
+    margin-left: 6px;
+  }
+  
+  @keyframes dot-animation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  

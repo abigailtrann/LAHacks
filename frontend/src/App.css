@@ -60,3 +60,37 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.typing-indicator {
+  display: inline-flex;
+  margin-right: 0.5rem;
+  height: 1.2rem;
+  align-items: center;
+}
+.typing-indicator div {
+  background-color: #444;
+  height: 0.8rem;
+  width: 0.8rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  animation: typing 0.8s ease-in-out infinite;
+}
+@keyframes typing {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.stack{
+  width: 70%;
+  padding-bottom: 40px;
+}
