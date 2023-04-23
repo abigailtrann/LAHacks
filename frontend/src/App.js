@@ -56,9 +56,10 @@ function App() {
           <Typography variant="h4">What is your major?</Typography>
         </Box>
         <Box>
-          <InputLabel>Major</InputLabel>
+          <InputLabel className="white-font">Major</InputLabel>
           <Select
-            className="span"
+            className="span white-font"
+            // make everything into white font
             style={{ fontSize: "30px" }}
             value={major}
             label="Major"
@@ -71,14 +72,14 @@ function App() {
         </Box>
 
         <Box marginTop={10}>
-          <Typography variant="h4">
-            How many units would you like to take per quarter?
+          <Typography variant="h4" className="white-font">
+            How many classes would you like to take per quarter?
           </Typography>
         </Box>
         <Box>
           <TextField
-            className="span"
-            inputProps={{ style: { fontSize: 30 } }}
+            className="span white-font"
+            inputProps={{ style: { fontSize: 30, color:'white' } }}
             variant="outlined"
             value={units}
             onChange={(event) => {
@@ -94,8 +95,8 @@ function App() {
         </Box>
         <Box>
           <TextField
-            className="span"
-            inputProps={{ style: { fontSize: 30 } }}
+            className="span white-font"
+            inputProps={{ style: { fontSize: 30, color:'white' } }}
             variant="outlined"
             value={quarters}
             onChange={(event) => {
@@ -110,9 +111,9 @@ function App() {
           </Typography>
         </Box>
         <Box>
-          <InputLabel>Difficulty</InputLabel>
+          <InputLabel className="white-font"> Difficulty</InputLabel>
           <Select
-            className="span"
+            className="span white-font"
             style={{ fontSize: "30px" }}
             value={difficulty}
             label="Difficulty"
