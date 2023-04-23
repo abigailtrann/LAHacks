@@ -15,7 +15,7 @@ The task of building an end-to-end full-stack application and integrating it wit
 - For the backend part, the major problem we faced was encoding the scraped information along with user-sent input to build a robust prompt to be sent to OpenAI's text completion and analysis API. This required a heavy bit of prompt engineering and we went through a multitude of online articles to understand how to ask the AI for the information that we wanted in the format we wanted.
 
 ## Accomplishments that we're proud of
-We are proud of making something that we ourselves would use. We are also proud of combining frontend, backend, web scraping, and implementing an AI API. This was all our first time building a full-stack web app, web scraping, and using NLP models, so it is amazing that it worked. I remember one of our members looking up what an API was and now she has worked with one and helped to implement it.
+We are proud of making something that we ourselves would use. We are also proud of combining frontend, backend, web scraping, and implementing an AI API. This was all our first time building a full-stack web app, web scraping, and using NLP models, so it is amazing that it worked.
 
 ## What we learned
 This was 2 out of 3 members' first hackathon. We learned how to ideate and build a full-stack application from the ground up. This involved designing our webpage, building & integrating our front-end and back-end, web scraping, using third-party APIs, and prompt engineering for Large Language models. Overall it was an awesome learning experience we are proud that our team went all the way and built a finished product.
