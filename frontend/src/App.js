@@ -2,7 +2,7 @@ import "./App.css";
 import * as React from "react";
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
-
+import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -22,7 +22,6 @@ const LoadingAnimation = () => {
   );
 };
 
-
 function App() {
   const [major, setMajor] = React.useState("");
   const [units, setUnits] = React.useState(0);
@@ -30,9 +29,10 @@ function App() {
   const [difficulty, setDifficulty] = React.useState("");
   const [displayResult, setDisplayResult] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
+  const navigate = useNavigate();
 
-  const [text, setText] = React.useState(''); // Text to be displayed
-  const [typedText, setTypedText] = React.useState(''); // Typed characters
+  const [text, setText] = React.useState(""); // Text to be displayed
+  const [typedText, setTypedText] = React.useState(""); // Typed characters
 
   const handleMajorChange = (event) => {
     setMajor(event.target.value);
@@ -49,40 +49,42 @@ function App() {
   };
 
   const onSubmit = () => {
-
-    const url = '/generate'; // replace with your endpoint URL
+    const url = "/generate"; // replace with your endpoint URL
     const data = info; // { username: 'foo', password: 'bar' }; // replace with your JSON data
-    
+
     setIsLoading(true);
     fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
     })
-      .then(response => response.json())
-      .then(data => {
-        
+      .then((response) => response.json())
+      .then((data) => {
         // data = JSON.stringify(data);
         console.log("got data:");
         console.log(typeof data);
         console.log(data);
 
         // console.log(json_str);
-        const schedule = data['courses'];
+        const schedule = data["courses"];
         // console.log(schedule);
-        const explanation =  data['explaination'];
+        const explaination = data["explaination"];
         // console.dir(schedule);
-        console.log(explanation);
+        console.log(explaination);
         setDisplayResult(true);
-        setText(explanation);
-        setTypedText('');
-    
+        setText(explaination);
+        setTypedText("");
+        navigate("/class-plan", { state: { schedule, explaination } });
+
+        // history.push({
+        //   pathname: "/class-plan",
+        //   state: { schedule, explanation },
+        // });
       })
-      .catch(error => console.error(error))
-      .finally(()=>{
+      .catch((error) => console.error(error))
+      .finally(() => {
         setIsLoading(false);
-      })
-    
+      });
   };
 
   return (
@@ -119,7 +121,7 @@ function App() {
         <Box>
           <TextField
             className="span white-font"
-            inputProps={{ style: { fontSize: 30, color:'white' } }}
+            inputProps={{ style: { fontSize: 30, color: "white" } }}
             variant="outlined"
             value={units}
             onChange={(event) => {
@@ -136,7 +138,7 @@ function App() {
         <Box>
           <TextField
             className="span white-font"
-            inputProps={{ style: { fontSize: 30, color:'white' } }}
+            inputProps={{ style: { fontSize: 30, color: "white" } }}
             variant="outlined"
             value={quarters}
             onChange={(event) => {
@@ -166,30 +168,17 @@ function App() {
         </Box>
 
         <Box>
-          <Button variant="outlined" id="button" onClick={onSubmit} disabled={isLoading ? true: false}>
+          <Button
+            variant="outlined"
+            id="button"
+            onClick={onSubmit}
+            disabled={isLoading ? true : false}
+          >
             Generate my plan
           </Button>
         </Box>
-        <Box>
-        <Typography variant="body1">
-          {isLoading && 
-          <LoadingAnimation />}
-          {displayResult && 
-            <>
-              <Typography variant="h4">
-                AI Explaination:
-              </Typography>
-              {text}
-            </>
-          }
-        </Typography>
-        </Box>
       </Stack>
-      
-      
-
     </div>
-
   );
 }
 

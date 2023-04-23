@@ -7,14 +7,14 @@ import json
 app = Flask(__name__, static_folder='../frontend/build/static', template_folder='../frontend/build')
 
 with open('courses_with_profs.json') as f:
-    data = json.load(f)
+    course_data = json.load(f)
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
 # Set up OpenAI API credentials
-openai.api_key = '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'
+openai.api_key = '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'
 
 @app.route('/process_form', methods=['POST'])
 def process_form():
@@ -49,7 +49,7 @@ def generate_response():
     # prompt = request.json['prompt']
 
     prompt = """
-        Give me a semester vise course schedule of what courses i should take per semester. Choose 1 professor for each course based on rating.
+        Give me a semester wise course schedule of what courses i should take per semester. Choose 1 professor for each course based on rating.
         I have total 8 semesters and maximum 2 courses per semester
         give me the output in the following json format
         {
@@ -69,17 +69,20 @@ def generate_response():
         app.logger.info(data)
         app.logger.info(data['quarters'])
         prompt = f"""
-            Give me a semester vise course schedule of what courses i should take per semester.
-            I have total {data['quarters']} semesters and maximum {data['units']} units per semester
-            give me the output in the following json format
-            Answer: {{"quarter [semester_number]":[{{"name": [course_name], "prof", [prof_name], "units": [units]}}, ....]}}
-            Choose one professor per course in the above format based on data provided ahead.
+            Give me a quarter wise course schedule of what courses I should take per quarter.
+            I have total {data['quarters']} quarters and maximum {data['units']} courses per quarters.
+            give me the output in the following json format:
+            Answer: {{"quarter [semester_number]":[{{"name": [course_code], "prof", [prof_name], "units": [units]}}]}}
+            Choose one professor per course in the above format based on data provided ahead. 
+            Do not schedule a prerequisite class after a high level class. (For example, CS 180 must precede CS181).
             the following is the input json description for my courses. I want the schedule to be {data['difficulty']}
-            Also make sure to give an explaination after the json response as to why you chose the particular schedule keep this information in mind while generating the course scheule
+            Also make sure to give an in-depth explanation after the json response as to why you chose the particular schedule keep this information in mind while generating the course scheule. Make sure your generated schedule has only values from data below
         """
     
     
-    prompt += json.dumps(data)
+    prompt += json.dumps(course_data)
+
+    app.logger.info(prompt)
 
     # Call OpenAI API to generate response
     response = openai.Completion.create(

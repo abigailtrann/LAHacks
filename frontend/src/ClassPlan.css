@@ -2,3 +2,11 @@
     display: flex;
     justify-content: center;
 }
+
+.classplan-stack{
+    width: 80%;
+}
+
+.classpath-table{
+    padding-bottom: 20px;
+}
