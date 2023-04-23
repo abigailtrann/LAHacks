@@ -31,8 +31,8 @@ function App() {
   const [isLoading, setIsLoading] = React.useState(false);
   const navigate = useNavigate();
 
-  const [text, setText] = React.useState(""); // Text to be displayed
-  const [typedText, setTypedText] = React.useState(""); // Typed characters
+  const [text, setText] = React.useState(""); 
+  const [typedText, setTypedText] = React.useState(""); 
 
   const handleMajorChange = (event) => {
     setMajor(event.target.value);
@@ -49,8 +49,8 @@ function App() {
   };
 
   const onSubmit = () => {
-    const url = "/generate"; // replace with your endpoint URL
-    const data = info; // { username: 'foo', password: 'bar' }; // replace with your JSON data
+    const url = "/generate";
+    const data = info; 
 
     setIsLoading(true);
     fetch(url, {
@@ -60,26 +60,19 @@ function App() {
     })
       .then((response) => response.json())
       .then((data) => {
-        // data = JSON.stringify(data);
+
         console.log("got data:");
         console.log(typeof data);
         console.log(data);
 
-        // console.log(json_str);
         const schedule = data["courses"];
-        // console.log(schedule);
         const explaination = data["explaination"];
-        // console.dir(schedule);
-        console.log(explaination);
+
         setDisplayResult(true);
         setText(explaination);
         setTypedText("");
         navigate("/class-plan", { state: { schedule, explaination } });
 
-        // history.push({
-        //   pathname: "/class-plan",
-        //   state: { schedule, explanation },
-        // });
       })
       .catch((error) => console.error(error))
       .finally(() => {
@@ -176,6 +169,20 @@ function App() {
           >
             Generate my plan
           </Button>
+        </Box>
+        <Box>
+        <Typography variant="body1">
+          {isLoading && 
+          <LoadingAnimation />}
+          {displayResult && 
+            <>
+              <Typography variant="h4">
+                AI Explaination:
+              </Typography>
+              {text}
+            </>
+          }
+        </Typography>
         </Box>
       </Stack>
     </div>

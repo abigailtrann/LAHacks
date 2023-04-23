@@ -31,7 +31,7 @@ export default function ClassPlan(props) {
             console.log("courses", courses);
             return (
               <>
-                <Typography variant="h3">{key}</Typography>
+                <Typography variant="h3" className="quarted-typo">{key}</Typography>
                 <TableContainer
                   component={Paper}
                   align="center"
@@ -74,7 +74,7 @@ export default function ClassPlan(props) {
             marginTop={5}
             marginBottom={10}
           >
-            <Typography variant="h4">AI Explanation:</Typography>
+            <Typography variant="h4">AI Explaination:</Typography>
             {explaination}
           </Typography>
         </Box>
