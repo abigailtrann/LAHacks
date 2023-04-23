@@ -2,6 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: linear-gradient(to bottom right, rgb(0, 55, 255), yellow);; /* Replace with the color you want */
+ padding-bottom: 70px;
   
   /* text-align: center;
   flex-direction: column;
@@ -14,6 +16,10 @@ body {
   font-weight: 100;
 }
 
+.white-font{ 
+  /* overrides everything */
+  color: white !important;
+}
 
 .span {
   display: block;
