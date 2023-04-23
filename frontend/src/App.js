@@ -24,25 +24,54 @@ function App() {
   };
 
   const info = {
-    major: { major },
-    units: { units },
-    quarters: { quarters },
-    difficulty: { difficulty },
+    major,
+    units,
+    quarters,
+    difficulty,
   };
 
   const onSubmit = () => {
     // call fetch api backend and send post request with json in body
-    const request = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(info),
-    };
+    // const request = {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify(info),
+    // };
 
-    // replace this
-    fetch("https://reqres.in/api/posts", request)
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch((error) => console.error(error));
+    // // replace this
+    // fetch("https://reqres.in/api/posts", request)
+    //   .then((response) => response.json())
+    //   .then((data) => console.log(data))
+    //   .catch((error) => console.error(error));
+
+    const url = '/generate'; // replace with your endpoint URL
+    const data = info; // { username: 'foo', password: 'bar' }; // replace with your JSON data
+    
+    fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+      .then(response => response.json())
+      .then(data => {
+        
+        data = JSON.stringify(data);
+        console.log("got data:");
+        console.log(typeof data);
+        console.log(data);
+
+        const json_str = data.match(/\{[\s\S]*\}/)[0];
+        console.log(json_str);
+        const schedule = JSON.parse(json_str);
+        console.log(schedule);
+        const explanation = data.split("Explanation:")[1].trim();
+
+        // console.dir(schedule);
+        console.log(explanation);
+    
+      })
+      .catch(error => console.error(error));
+    
   };
 
   return (
